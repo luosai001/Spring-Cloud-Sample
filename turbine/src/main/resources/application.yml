@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: turbine
+server:
+  port: 8000
+turbine:
+  app-config: hello,helloClient
+  aggregator:
+    clusterConfig: main
+  clusterNameExpression: metadata['cluster']
+
+eureka:
+  instance:
+    preferIpAddress: true
+    statusPageUrlPath: /info.html
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

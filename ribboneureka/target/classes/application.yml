@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: helloClient
+
+server:
+  port: 20000
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 5
+    metadata-map:
+      cluster: main
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 3

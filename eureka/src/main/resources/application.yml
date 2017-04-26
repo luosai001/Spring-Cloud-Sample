@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: registerCenter
+server:
+  port: 8761
+eureka:
+  instance: hostname
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+          defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    eviction-interval-timer-in-ms: 30000
+    enable-self-preservation: false
+
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
